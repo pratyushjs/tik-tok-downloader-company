@@ -13,7 +13,7 @@ export const BodyComponent = ({
     return (
         <React.Fragment>
             <section className="min-h-screen bg-light-200">
-                <div className="md:container md:mx-auto">{children}</div>
+                <div className="">{children}</div>
             </section>
         </React.Fragment>
     );

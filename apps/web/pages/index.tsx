@@ -12,7 +12,7 @@ const FormInputComponentDynamic = dynamic(
 export default () => {
     return (
         <section className="p-5 Homepage">
-            <InputHeaderText/>
+            <InputHeaderText />
             <FormInputComponentDynamic />
             {/* <Footer /> */}
         </section>

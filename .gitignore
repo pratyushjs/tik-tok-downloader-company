@@ -9,3 +9,4 @@ package-lock.json
 .yarn/patches
 .yarn/*.gz
 *.rdb
+.vscode

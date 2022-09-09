@@ -1,5 +1,5 @@
 .Homepage {
-    background: linear-gradient(180deg, #E6436D 0%, #65D2E9 100%);
+    background: linear-gradient(180deg, #e6436d 0%, #65d2e9 100%);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -7,7 +7,8 @@
     flex-direction: column;
 }
 
-.Header {}
+.Header {
+}
 
 .InputFiledHeaderText {
     font-style: normal;
@@ -21,5 +22,5 @@
     text-align: center;
     letter-spacing: -0.303241px;
 
-    color: #FFFFFF;
+    color: #ffffff;
 }

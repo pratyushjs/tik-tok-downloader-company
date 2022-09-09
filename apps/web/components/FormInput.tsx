@@ -113,10 +113,9 @@ export const FormInputComponent = (): JSX.Element => {
 
     return (
         <React.Fragment>
-            <section className="inline-block">
-               
+            <section className="flex flex-col">
                 <form
-                    className="flex flex-col md:flex-row py-8"
+                    className="flex flex-col md:flex-row py-4"
                     onSubmit={(event) => {
                         event.preventDefault();
                         if (!state.url.length) {
@@ -144,7 +143,7 @@ export const FormInputComponent = (): JSX.Element => {
                             }
                             value={state.url}
                             placeholder="Paste tiktok URL here…"
-                            className="p-3 border border-gray-300 font-sans h-auto w-auto outline-solid-blue-500 rounded-full"
+                            className="p-3 border border-gray-300 font-sans h-auto w-150 outline-solid-blue-500 rounded-full"
                         />
                     </div>
 
@@ -157,18 +156,18 @@ export const FormInputComponent = (): JSX.Element => {
                         </button>
                     </div>
                 </form>
-                <p className="text-black-400 font-sans font-semibold py-5">
+                <p className="text-black-400 font-sans font-semibold py-2 text-center">
                     {state.error instanceof Error
                         ? state.error.name.concat(
-                            ': '.concat(state.error.message),
-                        )
+                              ': '.concat(state.error.message),
+                          )
                         : state.error
-                            ? state.error
-                            : ''}
+                        ? state.error
+                        : ''}
                 </p>
-                <section className="mt-3 mb-3">
+                <section className="mt-3 mb-3 text-center flex justify-center">
                     {state.submitted && !data && (
-                        <p className={'text-base font-sans text-blue-500'}>
+                        <p className={'text-base font-sans text-black-500'}>
                             Wait a minute
                         </p>
                     )}

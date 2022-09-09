@@ -17,7 +17,7 @@ export const VideoComponent = ({data}: {data: ExtractedInfoWithProvider}) => {
                 <video
                     controls={true}
                     autoPlay={false}
-                    className="rounded-md h-64 w-80"
+                    className="rounded-md h-100 w-140"
                 >
                     <source src={data.video?.urls[0]} />
                 </video>
