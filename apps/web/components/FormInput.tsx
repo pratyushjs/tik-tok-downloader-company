@@ -114,20 +114,9 @@ export const FormInputComponent = (): JSX.Element => {
     return (
         <React.Fragment>
             <section className="inline-block">
-                <h1 className="text-lg leading-relaxed">
-                    Fill TikTok's Video URL below:
-                </h1>
-                <p className="text-red-400 font-sans font-semibold">
-                    {state.error instanceof Error
-                        ? state.error.name.concat(
-                              ': '.concat(state.error.message),
-                          )
-                        : state.error
-                        ? state.error
-                        : ''}
-                </p>
+               
                 <form
-                    className="flex flex-col md:flex-row"
+                    className="flex flex-col md:flex-row py-8"
                     onSubmit={(event) => {
                         event.preventDefault();
                         if (!state.url.length) {
@@ -154,21 +143,29 @@ export const FormInputComponent = (): JSX.Element => {
                                 })
                             }
                             value={state.url}
-                            placeholder="e.g: "
-                            className="p-3 border border-gray-300 font-sans h-auto w-auto outline-solid-blue-500"
+                            placeholder="Paste tiktok URL here…"
+                            className="p-3 border border-gray-300 font-sans h-auto w-auto outline-solid-blue-500 rounded-full"
                         />
                     </div>
 
                     <div>
                         <button
-                            className="p-3 lg:ml-2 mt-1 bg-sky-400 uppercase text-white shadow-sm"
+                            className="p-3 lg:ml-2 mt-1 bg-sky-400 uppercase text-white shadow-sm rounded-full"
                             disabled={state.submitted}
                         >
                             download
                         </button>
                     </div>
                 </form>
-
+                <p className="text-black-400 font-sans font-semibold py-5">
+                    {state.error instanceof Error
+                        ? state.error.name.concat(
+                            ': '.concat(state.error.message),
+                        )
+                        : state.error
+                            ? state.error
+                            : ''}
+                </p>
                 <section className="mt-3 mb-3">
                     {state.submitted && !data && (
                         <p className={'text-base font-sans text-blue-500'}>
