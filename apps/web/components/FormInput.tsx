@@ -1,3 +1,4 @@
+import {InputGroup, Input, InputRightElement, Button} from '@chakra-ui/react';
 import React from 'react';
 import useSWR, {Fetcher} from 'swr';
 import {ExtractedInfo} from 'tiktok-dl-core';
@@ -25,7 +26,7 @@ export type ExtractedInfoWithProvider = ExtractedInfo & {
 
 interface StateData {
     submitted: boolean;
-    error?: string | Error;
+    error?: string | Error | boolean;
     url: string;
 }
 
@@ -39,7 +40,7 @@ const fetcher: Fetcher<ExtractedInfoWithProvider, string> = (...args) =>
 export const FormInputComponent = (): JSX.Element => {
     const [state, setState] = React.useState<StateData>({
         submitted: false,
-        error: undefined,
+        error: false,
         url: '',
     });
     const {data, mutate} = useSWR(
@@ -79,6 +80,12 @@ export const FormInputComponent = (): JSX.Element => {
                 error: new InvalidUrlError('Invalid TikTok URL'),
             });
         } else {
+            console.log('this is ok');
+
+            setState({
+                ...state,
+                error: undefined,
+            });
             // submit event trigger.
             if (state.submitted && !state.error) {
                 mutate();
@@ -111,52 +118,74 @@ export const FormInputComponent = (): JSX.Element => {
             });
         }
     }, [state.submitted, state.url]);
-
+    const handleClick = (event: any) => {
+        if (!state.url.length) {
+            setState({
+                ...state,
+                error: 'Please fill the URL!',
+            });
+            return;
+        }
+        !state.error &&
+            setState({
+                ...state,
+                submitted: true,
+            });
+    };
     return (
         <React.Fragment>
             <section className="flex flex-col">
-                <form
-                    className="flex flex-col md:flex-row py-4"
-                    onSubmit={(event) => {
-                        event.preventDefault();
-                        if (!state.url.length) {
-                            setState({
-                                ...state,
-                                error: 'Please fill the URL!',
-                            });
-                            return;
-                        }
-                        !state.error &&
-                            setState({
-                                ...state,
-                                submitted: true,
-                            });
-                    }}
-                >
-                    <div>
-                        <input
+                <div>
+                    <InputGroup size="md" bg="white" borderRadius={'100px'}>
+                        <Input
+                            pr="4.5rem"
+                            placeholder="Paste tiktok URL here…"
+                            value={state.url}
                             type="url"
+                            w="74%"
+                            borderRadius={'100px'}
+                            p={'28px 28px'}
+                            border="none"
+                            focusBorderColor="none"
                             onChange={(event) =>
                                 setState({
                                     ...state,
                                     url: event.target.value,
                                 })
                             }
-                            value={state.url}
-                            placeholder="Paste tiktok URL here…"
-                            className="p-3 border border-gray-300 font-sans h-auto w-150 outline-solid-blue-500 rounded-full"
                         />
-                    </div>
-
-                    <div>
-                        <button
-                            className="p-3 lg:ml-2 mt-1 bg-sky-400 uppercase text-white shadow-sm rounded-full"
-                            disabled={state.submitted}
+                        <InputRightElement
+                            justifyContent={'center'}
+                            p={'28px 0'}
+                            w="initial"
                         >
-                            download
-                        </button>
-                    </div>
-                </form>
+                            <Button
+                                h="1.75rem"
+                                size="sm"
+                                onClick={() => handleClick}
+                                borderRadius={'60px'}
+                                bg={
+                                    state?.error == false || state?.error
+                                        ? '#69C9D0'
+                                        : '#E81D50'
+                                }
+                                color="white"
+                                fontSize={'20px'}
+                                fontWeight={'500'}
+                                p="19px"
+                                disabled={
+                                    state?.error == false || state?.error
+                                        ? true
+                                        : false
+                                }
+                            >
+                                {state?.error == false || state?.error
+                                    ? 'Paste'
+                                    : 'Download'}
+                            </Button>
+                        </InputRightElement>
+                    </InputGroup>
+                </div>
                 <p className="text-black-400 font-sans font-semibold py-2 text-center">
                     {state.error instanceof Error
                         ? state.error.name.concat(
