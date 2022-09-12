@@ -67,6 +67,7 @@ export const FormInputComponent = (): JSX.Element => {
     );
 
     React.useEffect(() => {
+        if (!state.url) return;
         if (
             !/^http(s?)(:\/\/)([a-z]+\.)*tiktok\.com\/(.+)$/gi.test(
                 state.url,

@@ -1,6 +1,5 @@
 import Document, {Head, Html, Main, NextScript} from 'next/document';
 import {BodyComponent} from '../components/Body';
-import {NextHeadComponent} from '../components/Header';
 
 /**
  * @class TikTokDocument
@@ -13,9 +12,7 @@ export default class TikTokDocument extends Document {
     render(): JSX.Element {
         return (
             <Html lang="en">
-                <Head>
-                    <NextHeadComponent />
-                </Head>
+                <Head></Head>
                 <body>
                     <BodyComponent>
                         <Main />
