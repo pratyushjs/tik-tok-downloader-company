@@ -24,3 +24,19 @@
 
     color: #ffffff;
 }
+.BottomData__blueHiglight{
+    background-color: rgba(105, 201, 208, 0.4);
+}
+.BottomData__redHighlight{
+    background-color: rgba(238, 29, 82, 0.3);
+}
+.Footer__PolicyTabs{
+font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 63px;
+    /* identical to box height, or 262% */
+
+
+    color: #000000;
+}

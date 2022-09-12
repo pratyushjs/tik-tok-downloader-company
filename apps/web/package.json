@@ -16,10 +16,10 @@
 	},
 	"scripts": {
 		"build": "next build",
-		"dev": "next dev",
+		"dev": "next dev -p 4345",
 		"lint": "next lint",
 		"format": "prettier . --write",
-		"start": "next start -p 2343"
+		"start": "next start -p 3001"
 	},
 	"devDependencies": {
 		"@next/eslint-plugin-next": "12.2.4",
