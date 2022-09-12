@@ -12,13 +12,13 @@ import IOS from '../static/images/IOS.png';
 import Image from 'next/image';
 const BottomData = () => {
     return (
-        <Box p={40} className="BottomData">
+        <Box p={['10%', '10%', '10%']} className="BottomData">
             <Image src={IOSImg} alt="ios" layout="responsive" />
             <Text
-                lineHeight={'100px'}
-                fontSize={'44px'}
+                lineHeight={['36px', '46px', '100px']}
+                fontSize={['20px', '20px', '44px']}
                 align={'center'}
-                pt={'40'}
+                pt={['60px', '40px']}
             >
                 The{' '}
                 <span className="BottomData__blueHiglight">
@@ -38,7 +38,9 @@ const BottomData = () => {
                 headingFontSize={'64'}
                 image={Tk}
             />
-            <Image src={TKBanner} layout="intrinsic" />
+            <Box m={['-10% -10%', '-30% 0 -10% 0']}>
+                <Image src={TKBanner} layout="intrinsic" />
+            </Box>
             <CommonTextBox
                 heading={fixedStrings.bottomData.howToSave.heading}
                 description={fixedStrings.bottomData.aboutTikTok.description}

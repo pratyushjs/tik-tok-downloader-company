@@ -4,11 +4,13 @@ import React from 'react';
 const InputHeaderText = () => {
     return (
         <>
-            <Text className="InputFiledHeaderText">
+            <Text fontWeight={800} fontSize={['36px', '60px']} color={'white'}>
                 Save tiktok videos &nbsp;
                 <span className="InputFiledHeaderText__slim">without</span>
             </Text>
-            <Text className="InputFiledHeaderText">watermark</Text>
+            <Text fontWeight={800} fontSize={['36px', '60px']} color={'white'}>
+                watermark
+            </Text>
         </>
     );
 };

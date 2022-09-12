@@ -9,21 +9,6 @@
 .Header {
 }
 
-.InputFiledHeaderText {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 60px;
-    line-height: 120%;
-    /* or 72px */
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.303241px;
-
-    color: #ffffff;
-}
-
 .InputFiledHeaderText__slim {
     font-weight: 400;
 }

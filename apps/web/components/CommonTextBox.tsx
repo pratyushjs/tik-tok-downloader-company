@@ -10,18 +10,23 @@ const CommonTextBox = ({
 }: any) => {
     if (isReverse) {
         return (
-            <Flex>
+            <Flex direction={['column', 'row']}>
                 <Box p="4">
                     <Image src={image} layout="intrinsic" />
                 </Box>
                 <Box p="4">
                     <Text
-                        fontSize={headingFontSize || '48px'}
+                        fontSize={['24px', '24px', headingFontSize || '48px']}
                         fontWeight={'700'}
+                        textAlign={['center', 'initial']}
                     >
                         {heading}
                     </Text>
-                    <Text fontSize={'20px'} fontWeight={'400'}>
+                    <Text
+                        fontSize={['16px', '16px', '20px']}
+                        fontWeight={'400'}
+                        textAlign={['center', 'initial']}
+                    >
                         {description}
                     </Text>
                 </Box>
@@ -29,12 +34,20 @@ const CommonTextBox = ({
         );
     }
     return (
-        <Flex>
+        <Flex direction={['column-reverse', 'row']}>
             <Box p="4">
-                <Text fontSize={headingFontSize || '48px'} fontWeight={'700'}>
+                <Text
+                    fontSize={['24px', '24px', headingFontSize || '48px']}
+                    fontWeight={'700'}
+                    textAlign={['center', 'initial']}
+                >
                     {heading}
                 </Text>
-                <Text fontSize={'20px'} fontWeight={'400'}>
+                <Text
+                    fontSize={['16px', '16px', '20px']}
+                    fontWeight={'400'}
+                    textAlign={['center', 'initial']}
+                >
                     {description}
                 </Text>
             </Box>

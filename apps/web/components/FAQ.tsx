@@ -5,12 +5,21 @@ import {
     AccordionPanel,
     AccordionIcon,
     Box,
+    Heading,
 } from '@chakra-ui/react';
 import React from 'react';
 
 const FAQ = () => {
     return (
-        <Box bg={'rgba(240, 240, 240, 0.47)'} p={'40'}>
+        <Box bg={'rgba(240, 240, 240, 0.47)'} p={['10%', '10%']}>
+            <Heading
+                fontSize={['32px', '48px']}
+                fontWeight={'700'}
+                textAlign="center"
+                pb={['54px', '108px']}
+            >
+                Frequently asked questions.
+            </Heading>
             <Accordion allowMultiple>
                 {[1, 2, 3, 4, 5, 6].map((e) => (
                     <AccordionItem

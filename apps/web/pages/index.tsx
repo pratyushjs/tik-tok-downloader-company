@@ -1,4 +1,4 @@
-import {Box} from '@chakra-ui/react';
+import {Box, Flex} from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import BottomData from '../components/BottomData';
 import FAQ from '../components/FAQ';
@@ -16,13 +16,19 @@ const FormInputComponentDynamic = dynamic(
 export default () => {
     return (
         <section>
-            <Box p={'0px 45px 45px 45px'} className="Homepage">
+            <Flex
+                p={['0 7%', '0px 45px 45px 45px']}
+                bgGradient="linear(180deg, #e6436d 0%, #65d2e9 100%)"
+                justifyContent={'center'}
+                alignItems={'center'}
+                flexDirection={'column'}
+            >
                 <CutsomHeader />
-                <Box padding={'23vh 0'}>
+                <Box padding={'12% 0'}>
                     <InputHeaderText />
                     <FormInputComponentDynamic />
                 </Box>
-            </Box>
+            </Flex>
             <BottomData />
             <FAQ />
             <Footer />
