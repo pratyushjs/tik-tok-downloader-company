@@ -1,4 +1,10 @@
-import {InputGroup, Input, InputRightElement, Button} from '@chakra-ui/react';
+import {
+    InputGroup,
+    Input,
+    InputRightElement,
+    Button,
+    Flex,
+} from '@chakra-ui/react';
 import React from 'react';
 import useSWR, {Fetcher} from 'swr';
 import {ExtractedInfo} from 'tiktok-dl-core';
@@ -142,7 +148,7 @@ export const FormInputComponent = (): JSX.Element => {
                             placeholder="Paste tiktok URL here…"
                             value={state.url}
                             type="url"
-                            w="74%"
+                            w={['98%', '98%', '74%']}
                             borderRadius={'100px'}
                             p={'28px 28px'}
                             border="none"
@@ -156,8 +162,9 @@ export const FormInputComponent = (): JSX.Element => {
                         />
                         <InputRightElement
                             justifyContent={'center'}
-                            p={'28px 0'}
+                            p={'10px 10px 28px 0'}
                             w="initial"
+                            display={['none', 'none', 'initial']}
                         >
                             <Button
                                 h="1.75rem"
@@ -185,6 +192,38 @@ export const FormInputComponent = (): JSX.Element => {
                             </Button>
                         </InputRightElement>
                     </InputGroup>
+                    <Flex
+                        p={'28px 10px 28px 0'}
+                        w="initial"
+                        display={['flex', 'flex', 'none']}
+                        justifyContent="center"
+                    >
+                        <Button
+                            h="1.75rem"
+                            size="sm"
+                            width={'full'}
+                            onClick={() => handleClick}
+                            borderRadius={'60px'}
+                            bg={
+                                state?.error == false || state?.error
+                                    ? '#e6436d'
+                                    : '#E81D50'
+                            }
+                            color="white"
+                            fontSize={'20px'}
+                            fontWeight={'500'}
+                            p="19px"
+                            disabled={
+                                state?.error == false || state?.error
+                                    ? true
+                                    : false
+                            }
+                        >
+                            {state?.error == false || state?.error
+                                ? 'Paste'
+                                : 'Download'}
+                        </Button>
+                    </Flex>
                 </div>
                 <p className="text-black-400 font-sans font-semibold py-2 text-center">
                     {state.error instanceof Error

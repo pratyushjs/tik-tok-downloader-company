@@ -11,6 +11,12 @@
 
 .InputFiledHeaderText__slim {
     font-weight: 400;
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    .InputFiledHeaderText__slim {
+        display: block;
+    }
 }
 
 .BottomData__blueHiglight {

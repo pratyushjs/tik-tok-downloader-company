@@ -8,7 +8,13 @@ const InputHeaderText = () => {
                 Save tiktok videos &nbsp;
                 <span className="InputFiledHeaderText__slim">without</span>
             </Text>
-            <Text fontWeight={800} fontSize={['36px', '60px']} color={'white'}>
+            <Text
+                fontWeight={800}
+                fontSize={['36px', '60px']}
+                color={'white'}
+                textAlign={'center'}
+                pb={'20px'}
+            >
                 watermark
             </Text>
         </>

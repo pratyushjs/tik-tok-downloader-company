@@ -204,21 +204,21 @@ const NAV_ITEMS: Array<NavItem> = [
         label: 'FAQs',
         href: '#',
     },
-    {
-        label: 'Download app',
-        children: [
-            {
-                label: 'MAC',
-                subLabel: 'For OSX and above',
-                href: '#',
-            },
-            {
-                label: 'Windows',
-                subLabel: 'From windows 10 and above',
-                href: '#',
-            },
-        ],
-    },
+    // {
+    //     label: 'Download app',
+    //     children: [
+    //         {
+    //             label: 'MAC',
+    //             subLabel: 'For OSX and above',
+    //             href: '#',
+    //         },
+    //         {
+    //             label: 'Windows',
+    //             subLabel: 'From windows 10 and above',
+    //             href: '#',
+    //         },
+    //     ],
+    // },
 ];
 
 const CutsomHeader = () => {
