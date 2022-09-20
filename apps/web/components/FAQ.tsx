@@ -27,6 +27,7 @@ const FAQ = () => {
                         borderRadius={'0 0 12px 12px'}
                         overflow="hidden"
                         marginBottom={'16px'}
+                        key={e}
                     >
                         <h2>
                             <AccordionButton

@@ -9,7 +9,7 @@ import React from 'react';
 import useSWR, {Fetcher} from 'swr';
 import {ExtractedInfo} from 'tiktok-dl-core';
 import {getTikTokURL} from '../lib/url';
-import {VideoComponent} from './Video';
+// import {VideoComponent} from './Video';
 
 // // ERRORS ///
 /**
@@ -72,7 +72,20 @@ export const FormInputComponent = (): JSX.Element => {
                 }),
         },
     );
-
+    React.useEffect(() => {
+        console.log(data);
+        if (data) {
+            const link = document.createElement('a');
+            console.log(data?.video?.urls[0]);
+            const a = data?.video?.urls[0];
+            if (a) {
+                link.href = a;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    }, [data]);
     React.useEffect(() => {
         if (!state.url) return;
         if (
@@ -240,9 +253,9 @@ export const FormInputComponent = (): JSX.Element => {
                             Wait a minute
                         </p>
                     )}
-                    {data && data.video && data.video.urls.length && (
+                    {/* {data && data.video && data.video.urls.length && (
                         <VideoComponent data={data} />
-                    )}
+                    )} */}
                 </section>
             </section>
         </React.Fragment>

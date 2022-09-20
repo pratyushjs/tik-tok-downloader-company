@@ -1,6 +1,6 @@
-import {maxRotateCount, providerCache} from '../config';
+import {maxRotateCount} from '../config';
 import {BaseProvider, ExtractedInfo, getRandomProvider} from 'tiktok-dl-core';
-import {client as redisClient} from './redis';
+// import {client as redisClient} from './redis';
 
 /**
  * Rotate provider.
@@ -24,15 +24,16 @@ export const rotateProvider = async (
             provider: retryCount.toString().concat(' providers'),
         };
     }
-    if (process.env.NODE_ENV === 'development') {
-        await redisClient.del(url);
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //     await redisClient.del(url);
+    // }
     //   console.log(provider.resourceName());
     if (provider.maintenance) {
         return await rotateProvider(getRandomProvider(), url, skipOnError);
     }
 
-    const cachedData = await redisClient.get(url);
+    // const cachedData = await redisClient.get(url);
+    const cachedData = null;
     if (!cachedData) {
         try {
             const data = await provider.fetch(url, params ?? {});
@@ -62,15 +63,15 @@ export const rotateProvider = async (
                     retryCount,
                 );
             } else {
-                redisClient.set(
-                    url,
-                    JSON.stringify({
-                        ...data,
-                        provider: provider.resourceName(),
-                    }),
-                    'EX',
-                    providerCache,
-                );
+                // redisClient.set(
+                //     url,
+                //     JSON.stringify({
+                //         ...data,
+                //         provider: provider.resourceName(),
+                //     }),
+                //     'EX',
+                //     providerCache,
+                // );
                 return {...data, provider: provider.resourceName()};
             }
         } catch (e) {

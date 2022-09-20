@@ -25,7 +25,7 @@ export default () => {
             >
                 <CutsomHeader />
                 <Box padding={'12% 0'}>
-                    <InputHeaderText />
+                    <InputHeaderText type={'INITIAL'} />
                     <FormInputComponentDynamic />
                 </Box>
             </Flex>
