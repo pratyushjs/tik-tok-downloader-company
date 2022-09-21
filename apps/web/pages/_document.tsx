@@ -12,7 +12,9 @@ export default class TikTokDocument extends Document {
     render(): JSX.Element {
         return (
             <Html lang="en">
-                <Head></Head>
+                <Head>
+                    <link href='https://fonts.googleapis.com/css?family=Poppins&display=optional' rel='stylesheet'></link>
+                </Head>
                 <body>
                     <BodyComponent>
                         <Main />

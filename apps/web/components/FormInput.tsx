@@ -9,7 +9,7 @@ import React from 'react';
 import useSWR, {Fetcher} from 'swr';
 import {ExtractedInfo} from 'tiktok-dl-core';
 import {getTikTokURL} from '../lib/url';
-// import {VideoComponent} from './Video';
+import {VideoComponent} from './Video';
 
 // // ERRORS ///
 /**
@@ -39,11 +39,7 @@ interface StateData {
 const fetcher: Fetcher<ExtractedInfoWithProvider, string> = (...args) =>
     fetch(...args).then((r) => r.json());
 
-/**
- * FormInput Component.
- * @return {JSX.Element}
- */
-export const FormInputComponent = (): JSX.Element => {
+export const FormInputComponent = (props:any): JSX.Element => {
     const [state, setState] = React.useState<StateData>({
         submitted: false,
         error: false,
@@ -253,9 +249,9 @@ export const FormInputComponent = (): JSX.Element => {
                             Wait a minute
                         </p>
                     )}
-                    {/* {data && data.video && data.video.urls.length && (
+                    {data && data.video && data.video.urls.length && (
                         <VideoComponent data={data} />
-                    )} */}
+                    )}
                 </section>
             </section>
         </React.Fragment>
