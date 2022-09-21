@@ -5,7 +5,7 @@ import FAQ from '../components/FAQ';
 import {Footer} from '../components/Footer';
 import CutsomHeader from '../components/CustomHeader';
 import InputHeaderText from '../components/InputHeaderText';
-import { useState } from 'react';
+import {useState} from 'react';
 
 const FormInputComponentDynamic = dynamic(
     () => import('../components/FormInput'),
@@ -15,8 +15,8 @@ const FormInputComponentDynamic = dynamic(
 );
 
 export default () => {
-    const [urlProgressType, seturlProgressType] = useState('INITIAL')
-    
+    const [urlProgressType, seturlProgressType] = useState('INITIAL');
+
     return (
         <section>
             <Flex
@@ -28,8 +28,13 @@ export default () => {
             >
                 <CutsomHeader />
                 <Box padding={'2% 0 22% 0'}>
-                    <InputHeaderText type={'INITIAL'} urlProgressType={urlProgressType} />
-                    <FormInputComponentDynamic seturlProgressType={seturlProgressType} />
+                    <InputHeaderText
+                        type={'INITIAL'}
+                        urlProgressType={urlProgressType}
+                    />
+                    <FormInputComponentDynamic
+                        seturlProgressType={seturlProgressType}
+                    />
                 </Box>
             </Flex>
             <BottomData />

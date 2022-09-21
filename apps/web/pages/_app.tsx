@@ -8,7 +8,7 @@ import theme from '../utils/theme';
  * @param {AppProps} arg0 App properties.
  * @return {JSX.Element}
  */
-export default function TikTokApp({ Component, pageProps }: AppProps) {
+export default function TikTokApp({Component, pageProps}: AppProps) {
     return (
         <ChakraProvider theme={theme}>
             <Component {...pageProps} />

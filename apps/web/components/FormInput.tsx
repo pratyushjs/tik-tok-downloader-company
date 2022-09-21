@@ -39,7 +39,7 @@ interface StateData {
 const fetcher: Fetcher<ExtractedInfoWithProvider, string> = (...args) =>
     fetch(...args).then((r) => r.json());
 
-export const FormInputComponent = (props:any): JSX.Element => {
+export const FormInputComponent = (props: any): JSX.Element => {
     const [state, setState] = React.useState<StateData>({
         submitted: false,
         error: false,
@@ -61,11 +61,13 @@ export const FormInputComponent = (props:any): JSX.Element => {
             loadingTimeout: 5_000,
             refreshInterval: 60_000,
             revalidateOnMount: false,
-            onSuccess: () =>
+            onSuccess: () => {
                 setState({
                     ...state,
                     submitted: false,
-                }),
+                });
+                props.seturlProgressType('');
+            },
         },
     );
     React.useEffect(() => {
@@ -146,6 +148,7 @@ export const FormInputComponent = (props:any): JSX.Element => {
                 ...state,
                 submitted: true,
             });
+        props.seturlProgressType('DOWNLOADING');
     };
     return (
         <React.Fragment>

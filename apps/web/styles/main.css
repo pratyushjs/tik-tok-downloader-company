@@ -36,3 +36,29 @@
 
     color: #000000;
 }
+.VideoPlayer__Wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.VideoPlayer__Wrapper__Play {
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+}
+.VideoPlayer__Wrapper__Play:hover {
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+.VideoPlayer__Wrapper__Image {
+    z-index: 1;
+}
+.VideoPlayer__Wrapper__Image:hover {
+    background: #f2f6f7;
+}

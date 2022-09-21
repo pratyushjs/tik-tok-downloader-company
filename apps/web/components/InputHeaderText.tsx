@@ -30,7 +30,7 @@ const InputHeaderText = (props: any) => {
     return (
         <>
             <Text fontWeight={800} fontSize={['36px', '60px']} color={'white'}>
-                Save tiktok videos &nbsp;
+                Download tiktok videos &nbsp;
                 <span className="InputFiledHeaderText__slim">without</span>
             </Text>
             <Text

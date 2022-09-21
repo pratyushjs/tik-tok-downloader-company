@@ -1,23 +1,56 @@
-import React from 'react';
-import type {ExtractedInfoWithProvider} from './FormInput';
-
-export const VideoComponent = ({data}: {data: ExtractedInfoWithProvider}) => {
+import Image from 'next/image';
+import React, { useRef, useState } from 'react';
+import type { ExtractedInfoWithProvider } from './FormInput';
+import Play from '../static/images/play.webp';
+import Pause from '../static/images/pause.png';
+export const VideoComponent = ({ data }: { data: ExtractedInfoWithProvider }) => {
+    const videoRef = useRef<any>(null);
+    const [state, setState] = useState(false);
     // const copyUrl = (url: string) => {
     //     navigator.clipboard.writeText(url);
     //     if (typeof window !== 'undefined') {
     //         window.alert('URL Copied');
     //     }
     // };
+    const handleClick = () => {
+        if (state) {
+            videoRef?.current?.pause();
+        } else {
+            videoRef?.current?.play();
+        }
+        setState(!state);
+    };
     return (
         <React.Fragment>
             {/* This video is downloaded from{' '}
             <span className="font-semibold">{data.provider}</span>.
             {data.caption && <pre>{data.caption}</pre>} */}
-            <div className="flex">
+
+            <div className="VideoPlayer__Wrapper" onClick={handleClick}>
+                <div className="VideoPlayer__Wrapper__Play">
+                    <div className="VideoPlayer__Wrapper__Image">
+                        {state ? (
+                            <Image
+                                src={Play}
+                                layout={'fixed'}
+                                width={'50'}
+                                height={'50'}
+                            />
+                        ) : (
+                            <Image
+                                src={Pause}
+                                layout={'fixed'}
+                                width={'50'}
+                                height={'50'}
+                            />
+                        )}
+                    </div>
+                </div>
                 <video
-                    controls={true}
+                    controls={false}
                     autoPlay={false}
-                    className="rounded-md h-100 w-140"
+                    className="rounded-md h-100 w-100"
+                    ref={videoRef}
                 >
                     <source src={data.video?.urls[0]} />
                 </video>
