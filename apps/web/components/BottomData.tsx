@@ -12,7 +12,7 @@ import IOS from '../static/images/IOS.png';
 import Image from 'next/image';
 const BottomData = () => {
     return (
-        <Box p={['10%', '10%', '10%']} className="BottomData">
+        <Box p={['10%', '10%', '10% 10% 0 10%']} className="BottomData">
             {/* <Image src={IOSImg} alt="ios" layout="responsive" />
              <Box position={'absolute'} right={0} marginTop={['23%', '34%', '-33%']}>
                 <Image src={BlueBubble} layout={'fixed'} />
@@ -21,7 +21,8 @@ const BottomData = () => {
                 lineHeight={['36px', '46px', '100px']}
                 fontSize={['20px', '20px', '44px']}
                 align={'center'}
-                pt={['60px', '40px']}
+                pt={['60px', '5%']}
+                pb={['15%']}
             >
                 The{' '}
                 <span className="BottomData__blueHiglight">

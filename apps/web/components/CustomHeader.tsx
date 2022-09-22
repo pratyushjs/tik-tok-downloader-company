@@ -226,11 +226,14 @@ const CutsomHeader = () => {
     return (
         <Flex
             w={'full'}
-            padding={['3% 0 0 0 ', '40px']}
+            padding={['3% 0 0 7%', '40px']}
             justifyContent={'space-between'}
+            position={'absolute'}
+            top={'0'}
+            left={0}
         >
-            <Box>
-                <Image src={TKHeader} layout="intrinsic" />
+            <Box w={['6%', '3%']} padding={['5% 0 0 0%', '0px']}>
+                <Image src={TKHeader} layout={'responsive'} />
             </Box>
             <HStack>
                 <Box>

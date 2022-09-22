@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import React, {useRef, useState} from 'react';
-import type {ExtractedInfoWithProvider} from './FormInput';
-import Play from '../static/images/play.webp';
+import Play from '../static/images/play.png';
 import Pause from '../static/images/pause.png';
-export const VideoComponent = ({data}: {data: ExtractedInfoWithProvider}) => {
+export const VideoComponent = (props: any) => {
+    const {data} = props;
     const videoRef = useRef<any>(null);
     const [state, setState] = useState(false);
     // const copyUrl = (url: string) => {

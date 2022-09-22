@@ -16,6 +16,7 @@ const FormInputComponentDynamic = dynamic(
 
 export default () => {
     const [urlProgressType, seturlProgressType] = useState('INITIAL');
+    console.log(urlProgressType);
 
     return (
         <section>
@@ -26,14 +27,10 @@ export default () => {
                 alignItems={'center'}
                 flexDirection={'column'}
                 minH={'100vh'}
-                maxH={'100vh'}
             >
                 <CutsomHeader />
-                <Box padding={'2% 0 22% 0'}>
-                    <InputHeaderText
-                        type={'INITIAL'}
-                        urlProgressType={urlProgressType}
-                    />
+                <Box padding={'2% 0 2% 0'}>
+                    <InputHeaderText urlProgressType={urlProgressType} />
                     <FormInputComponentDynamic
                         seturlProgressType={seturlProgressType}
                     />
