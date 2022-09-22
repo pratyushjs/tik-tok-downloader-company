@@ -25,6 +25,8 @@ export default () => {
                 justifyContent={'center'}
                 alignItems={'center'}
                 flexDirection={'column'}
+                minH={'100vh'}
+                maxH={'100vh'}
             >
                 <CutsomHeader />
                 <Box padding={'2% 0 22% 0'}>

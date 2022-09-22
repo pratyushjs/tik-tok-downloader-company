@@ -22,6 +22,7 @@ const InputHeaderText = (props: any) => {
                     fontWeight={800}
                     fontSize={['36px', '60px']}
                     color={'white'}
+                    textAlign={'center'}
                 >
                     Downloading failed
                 </Text>
@@ -29,7 +30,7 @@ const InputHeaderText = (props: any) => {
         );
     return (
         <>
-            <Text fontWeight={800} fontSize={['36px', '60px']} color={'white'}>
+            <Text fontWeight={800} fontSize={['36px', '60px']} color={'white'} textAlign={'center'}>
                 Download tiktok videos &nbsp;
                 <span className="InputFiledHeaderText__slim">without</span>
             </Text>
