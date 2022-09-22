@@ -10,7 +10,7 @@ import {
 import React, {useRef, useState} from 'react';
 import {ExtractedInfo} from 'tiktok-dl-core';
 import {getTikTokURL} from '../lib/url';
-import { VideoComponent } from './Video';
+import {VideoComponent} from './Video';
 import CC from '../static/images/cc.png';
 import axios from 'axios';
 import Image from 'next/image';
@@ -152,14 +152,14 @@ export const FormInputComponent = (props: any): JSX.Element => {
         }
     };
     const handlePaste = () => {
-        navigator.clipboard.readText().then(text => {
+        navigator.clipboard.readText().then((text) => {
             // inputFieldRef.current.value = text;
             setState({
                 ...state,
-                url:text,
-            })
-        })
-    }
+                url: text,
+            });
+        });
+    };
     const handleClick = (event: any) => {
         console.log('click');
         setState({
@@ -207,7 +207,12 @@ export const FormInputComponent = (props: any): JSX.Element => {
                     )}
                 </section>
                 <div>
-                    <InputGroup size="md" bg="white" borderRadius={'100px'} h={['60px','84px']}>
+                    <InputGroup
+                        size="md"
+                        bg="white"
+                        borderRadius={'100px'}
+                        h={['60px', '84px']}
+                    >
                         <Input
                             pr="4.5rem"
                             h={['60px', '84px']}
@@ -227,8 +232,13 @@ export const FormInputComponent = (props: any): JSX.Element => {
                                 })
                             }
                         />
-                        <Flex alignItems={'center'} cursor='pointer' onClick={handlePaste} mr={'6px'}>
-                            <Image src={CC} layout={'intrinsic'}  />
+                        <Flex
+                            alignItems={'center'}
+                            cursor="pointer"
+                            onClick={handlePaste}
+                            mr={'6px'}
+                        >
+                            <Image src={CC} layout={'intrinsic'} />
                         </Flex>
                         <InputRightElement
                             justifyContent={'center'}
@@ -236,10 +246,9 @@ export const FormInputComponent = (props: any): JSX.Element => {
                             w="initial"
                             display={['none', 'none', 'initial']}
                             alignItems={'center'}
-                           
                         >
                             <Button
-                               h="auto"
+                                h="auto"
                                 size="sm"
                                 width={'full'}
                                 onClick={(e) => handleClick(e)}
@@ -255,7 +264,6 @@ export const FormInputComponent = (props: any): JSX.Element => {
                                 p="19px"
                                 isDisabled={isButtonDisabled()}
                                 isActive={false}
-                                
                             >
                                 Download
                             </Button>
@@ -283,7 +291,6 @@ export const FormInputComponent = (props: any): JSX.Element => {
                             fontWeight={'500'}
                             p="19px"
                             disabled={isButtonDisabled()}
-                           
                         >
                             Download
                         </Button>
@@ -299,18 +306,20 @@ export const FormInputComponent = (props: any): JSX.Element => {
                         : ''}
                 </p>
                 <Grid templateColumns="repeat(2, 1fr)" gap={3}>
-                    {recievedData?.video?.urls.map((url: any, index: number) => (
-                        <GridItem>
-                            <Button
-                                onClick={() => downloadLink(url)}
-                                w={'full'}
-                                bg={'#2A2A2A'}
-                                color={'white'}
-                            >
-                                LINK {index + 1}
-                            </Button>
-                        </GridItem>
-                    ))}
+                    {recievedData?.video?.urls.map(
+                        (url: any, index: number) => (
+                            <GridItem>
+                                <Button
+                                    onClick={() => downloadLink(url)}
+                                    w={'full'}
+                                    bg={'#2A2A2A'}
+                                    color={'white'}
+                                >
+                                    LINK {index + 1}
+                                </Button>
+                            </GridItem>
+                        ),
+                    )}
                 </Grid>
             </section>
         </React.Fragment>
