@@ -8,10 +8,11 @@ import {
     Heading,
 } from '@chakra-ui/react';
 import React from 'react';
+import {fixedStrings} from '../static/fixedString';
 
 const FAQ = () => {
     return (
-        <Box bg={'rgba(240, 240, 240, 0.47)'} p={['10%', '10%']}>
+        <Box bg={'rgba(240, 240, 240, 0.47)'} p={['10%', '10%']} id={'FAQS'}>
             <Heading
                 fontSize={['32px', '48px']}
                 fontWeight={'700'}
@@ -21,13 +22,13 @@ const FAQ = () => {
                 Frequently asked questions.
             </Heading>
             <Accordion allowMultiple>
-                {[1, 2, 3, 4, 5, 6].map((e) => (
+                {fixedStrings.FAQS.map((FAQ, i) => (
                     <AccordionItem
                         border={'none'}
                         borderRadius={'0 0 12px 12px'}
                         overflow="hidden"
                         marginBottom={'16px'}
-                        key={e}
+                        key={`${FAQ}i`}
                     >
                         <h2>
                             <AccordionButton
@@ -43,7 +44,7 @@ const FAQ = () => {
                                     fontSize={'20px'}
                                     fontWeight={'400'}
                                 >
-                                    How to use the app?
+                                    {FAQ.heading}
                                 </Box>
                                 <AccordionIcon />
                             </AccordionButton>

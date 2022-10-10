@@ -197,12 +197,12 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
     {
-        label: 'HOME',
+        label: 'How to save tiktok videos?',
         href: '#',
     },
     {
         label: 'FAQs',
-        href: '#',
+        href: '#FAQS',
     },
     // {
     //     label: 'Download app',
@@ -231,6 +231,7 @@ const CutsomHeader = () => {
             position={'absolute'}
             top={'0'}
             left={0}
+            background={'rgba(0, 0, 0, 0.2)'}
         >
             <Box w={['6%', '3%']} padding={['5% 0 0 0%', '0px']}>
                 <Image src={TKHeader} layout={'responsive'} />

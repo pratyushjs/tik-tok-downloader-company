@@ -200,18 +200,19 @@ export const FormInputComponent = (props: any): JSX.Element => {
     };
     return (
         <React.Fragment>
-            <section className="flex flex-col">
+            <section className="flex flex-col justify-center">
                 <section className="mt-3 mb-3 text-center flex justify-center">
                     {recievedData?.video?.urls?.length && (
                         <VideoComponent data={recievedData} />
                     )}
                 </section>
-                <div>
+                <Flex justifyContent={'center'}>
                     <InputGroup
                         size="md"
                         bg="white"
                         borderRadius={'100px'}
                         h={['60px', '84px']}
+                        width={['full', '80%', '70%']}
                     >
                         <Input
                             pr="4.5rem"
@@ -223,6 +224,8 @@ export const FormInputComponent = (props: any): JSX.Element => {
                             borderRadius={'100px'}
                             p={'28px 28px'}
                             border="none"
+                            fontSize={'20px'}
+                            fontWeight={'400px'}
                             focusBorderColor="none"
                             ref={inputFieldRef}
                             onChange={(event) =>
@@ -295,7 +298,7 @@ export const FormInputComponent = (props: any): JSX.Element => {
                             Download
                         </Button>
                     </Flex>
-                </div>
+                </Flex>
                 <p className="text-black-400 font-sans font-semibold py-2 text-center">
                     {state.error instanceof Error
                         ? state.error.name.concat(

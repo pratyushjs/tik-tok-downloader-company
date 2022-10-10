@@ -1,5 +1,9 @@
+html {
+    scroll-behavior: smooth;
+    /*Adds smooth scrolling instead of snapping to element*/
+}
 .Homepage {
-    background: linear-gradient(180deg, #e6436d 0%, #65d2e9 100%);
+    background: linear-gradient(292.45deg, #7f197c 0%, #3b3b9a 98.67%);
     display: flex;
     justify-content: center;
     align-items: center;

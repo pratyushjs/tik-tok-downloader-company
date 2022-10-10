@@ -1,11 +1,14 @@
 import {Box, Flex} from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
-import BottomData from '../components/BottomData';
 import FAQ from '../components/FAQ';
 import {Footer} from '../components/Footer';
 import CutsomHeader from '../components/CustomHeader';
 import InputHeaderText from '../components/InputHeaderText';
 import {useState} from 'react';
+import ThreeEasySteps from '../components/ThreeEasySteps';
+import KeySteps from '../components/KeySteps';
+import AppyComponent from '../components/AppyComponent';
+import BestPlace from '../components/BestPlace';
 
 const FormInputComponentDynamic = dynamic(
     () => import('../components/FormInput'),
@@ -22,21 +25,25 @@ export default () => {
         <section>
             <Flex
                 p={['0 7%', '0px 45px 45px 45px']}
-                bgGradient="linear(180deg, #e6436d 0%, #65d2e9 100%)"
+                bgGradient="linear(292.45deg, #7F197C 0%, #3B3B9A 98.67%)"
                 justifyContent={'center'}
                 alignItems={'center'}
                 flexDirection={'column'}
                 minH={'100vh'}
             >
                 <CutsomHeader />
-                <Box padding={'2% 0 2% 0'}>
+                <Box padding={'2% 0 2% 0'} w="100%">
                     <InputHeaderText urlProgressType={urlProgressType} />
                     <FormInputComponentDynamic
                         seturlProgressType={seturlProgressType}
                     />
                 </Box>
             </Flex>
-            <BottomData />
+            <ThreeEasySteps />
+            <KeySteps />
+            <BestPlace />
+            <AppyComponent />
+            {/* <BottomData /> */}
             <FAQ />
             <Footer />
         </section>
