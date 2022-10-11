@@ -9,6 +9,9 @@ import ThreeEasySteps from '../components/ThreeEasySteps';
 import KeySteps from '../components/KeySteps';
 import AppyComponent from '../components/AppyComponent';
 import BestPlace from '../components/BestPlace';
+import AndroidSection from '../components/AndroidSection';
+import IOSSection from '../components/IOSSection';
+import PcSection from '../components/PcSection';
 
 const FormInputComponentDynamic = dynamic(
     () => import('../components/FormInput'),
@@ -41,6 +44,9 @@ export default () => {
             </Flex>
             <ThreeEasySteps />
             <KeySteps />
+            <AndroidSection />
+            <IOSSection />
+            <PcSection/>
             <BestPlace />
             <AppyComponent />
             {/* <BottomData /> */}

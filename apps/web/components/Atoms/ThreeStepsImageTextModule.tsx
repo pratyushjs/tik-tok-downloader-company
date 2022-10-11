@@ -5,7 +5,7 @@ import React from 'react';
 const ThreeStepsImageTextModule = (props: any) => {
     const {imageSrc, index, heading, text} = props;
     return (
-        <Flex direction={'column'}>
+        <Flex direction={'column'} flex={'0 0 33.33%'}>
             <Flex textAlign={'center'} justifyContent={'center'} pb={'2%'}>
                 <Image
                     src={imageSrc}
