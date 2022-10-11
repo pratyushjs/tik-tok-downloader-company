@@ -19,26 +19,32 @@ const AndroidSection = () => {
                 direction={['column', 'column', 'row']}
                 justifyContent="center"
                 alignContent={'center'}
+                className="test_line"
+                position={'relative'}
+                zIndex={'0'}
             >
                 {fixedStrings.androidSections.map((android, i) => (
                     <Flex
                         direction={'column'}
-                        justifyContent={'center'}
+                        justifyContent={'flex-start'}
                         alignItems={'center'}
-                        mb={'25px'}
+                        flex="0 0 25%"
+                        p={['', '', '0 20px 20px 25px']}
                     >
-                        <Flex
-                            alignItems={'center'}
-                            bg={'rgba(255, 0, 80, 0.2)'}
-                            textAlign="center"
-                            borderRadius={'50%'}
-                            w={['24px', '40px']}
-                            h={['24px', '40px']}
-                            mr={['2%']}
-                            justifyContent={'center'}
-                            mb={['20px', '20px', '60px']}
-                        >
-                            {i + 1}
+                        <Flex>
+                            <Flex
+                                alignItems={'center'}
+                                bg={'#ffccdc'}
+                                textAlign="center"
+                                borderRadius={'50%'}
+                                w={['24px', '40px']}
+                                h={['24px', '40px']}
+                                mr={['2%']}
+                                justifyContent={'center'}
+                                mb={['20px', '20px', '60px']}
+                            >
+                                {i + 1}
+                            </Flex>
                         </Flex>
                         <Flex mb={'25px'}>
                             <Image

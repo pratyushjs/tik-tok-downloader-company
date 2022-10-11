@@ -62,17 +62,10 @@ const InputHeaderText = (props: any) => {
                 color={'white'}
                 textAlign={'center'}
             >
-                Download tiktok videos &nbsp;
-                <span className="InputFiledHeaderText__slim">without</span>
+                Download TikTok Video
             </Text>
-            <Text
-                fontWeight={[400, 800]}
-                fontSize={['36px', '60px']}
-                color={'white'}
-                textAlign={'center'}
-                pb={'20px'}
-            >
-                watermark
+            <Text className="InputFiledHeaderText__slim">
+                TikTok video downloader. Download TikTok video without watermark
             </Text>
         </>
     );

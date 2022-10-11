@@ -33,7 +33,12 @@ const IOSSection = () => {
                     newer version for smooth functioning.
                 </Box>
             </Flex>
-            <Flex direction={'column'}>
+            <Flex
+                direction={'column'}
+                pos={'relative'}
+                zIndex={'1'}
+                className="step_ios"
+            >
                 {fixedStrings.iosSection.map((ios, i) => (
                     <Flex
                         direction={['column', 'row', 'row']}
@@ -64,7 +69,7 @@ const IOSSection = () => {
                         </Flex>
                         <Flex
                             alignItems={'center'}
-                            bg={'rgba(255, 0, 80, 0.2)'}
+                            bg={'#ffccdc'}
                             textAlign="center"
                             borderRadius={'50%'}
                             w={['24px', '40px']}

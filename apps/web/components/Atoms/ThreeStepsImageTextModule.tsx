@@ -5,20 +5,32 @@ import React from 'react';
 const ThreeStepsImageTextModule = (props: any) => {
     const {imageSrc, index, heading, text} = props;
     return (
-        <Flex direction={'column'} flex={'0 0 33.33%'}>
-            <Flex textAlign={'center'} justifyContent={'center'} pb={'2%'}>
+        <Flex
+            direction={'column'}
+            flex={'0 0 33.33%'}
+            mb={['30px', '30px', 0]}
+            alignItems={'center'}
+        >
+            <Flex
+                textAlign={'center'}
+                justifyContent={'center'}
+                pb={'2%'}
+                h={['100px', '100px', 'initial']}
+                w={['100px', '100px', 'initial']}
+                mb={['16px', '16px', '28px']}
+            >
                 <Image
                     src={imageSrc}
                     layout={'intrinsic'}
-                    height="60%"
-                    width={'60%'}
+                    height="180%"
+                    width={'180%'}
                 />
             </Flex>
             <Flex direction={'column'}>
                 <Flex justifyContent={'center'}>
                     <Flex
                         alignItems={'center'}
-                        bg={'rgba(255, 0, 80, 0.2)'}
+                        bg={'#ffccdc'}
                         textAlign="center"
                         borderRadius={'50%'}
                         w={['24px', '40px']}
@@ -33,6 +45,7 @@ const ThreeStepsImageTextModule = (props: any) => {
                         color={'#000000'}
                         fontWeight="700"
                         fontSize={['16px', '32px']}
+                        mb={'10px'}
                     >
                         {heading}
                     </Box>
@@ -42,6 +55,7 @@ const ThreeStepsImageTextModule = (props: any) => {
                     fontWeight="400"
                     fontSize={['14px', '18px']}
                     textAlign={'center'}
+                    m={[0, 0, '0 18%']}
                 >
                     {text}
                 </Box>

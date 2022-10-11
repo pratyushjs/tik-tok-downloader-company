@@ -206,13 +206,16 @@ export const FormInputComponent = (props: any): JSX.Element => {
                         <VideoComponent data={recievedData} />
                     )}
                 </section>
-                <Flex justifyContent={'center'}>
+                <Flex
+                    justifyContent={'center'}
+                    direction={['column', 'column', 'row']}
+                >
                     <InputGroup
                         size="md"
                         bg="white"
                         borderRadius={'100px'}
                         h={['60px', '84px']}
-                        width={['full', '80%', '70%']}
+                        width={['full', '100%', '70%']}
                     >
                         <Input
                             pr="4.5rem"

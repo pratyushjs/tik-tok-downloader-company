@@ -51,6 +51,7 @@ const AppyComponent = () => {
                     fontSize={['14px', '18px']}
                     fontWeight={'400'}
                     color={'#333B4F'}
+                    textAlign={['center']}
                 >
                     Tiktokgo.net is a free online TikTok video downloader tool
                     without watermark. You can save HD TikTok videos in MP4

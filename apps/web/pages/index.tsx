@@ -28,7 +28,7 @@ export default () => {
         <section>
             <Flex
                 p={['0 7%', '0px 45px 45px 45px']}
-                bgGradient="linear(292.45deg, #7F197C 0%, #3B3B9A 98.67%)"
+                bgGradient="linear(-292.45deg, #7F197C 0%, #3B3B9A 98.67%)"
                 justifyContent={'center'}
                 alignItems={'center'}
                 flexDirection={'column'}

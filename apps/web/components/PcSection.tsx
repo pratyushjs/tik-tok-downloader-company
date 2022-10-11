@@ -33,26 +33,29 @@ const PcSection = () => {
                 direction={['column', 'column', 'row']}
                 justifyContent="center"
                 alignContent={'center'}
+                pos={'relative'}
+                className="step-line-pc"
+                zIndex={'0'}
             >
                 {fixedStrings.pcSection.map((android, i) => (
                     <Flex
                         direction={'column'}
-                        justifyContent={'center'}
+                        justifyContent={'flex-start'}
                         alignItems={'center'}
                         mb={'25px'}
                         flex="0 0 33.33%"
                     >
                         <Flex
                             alignItems={'center'}
-                            bg={'rgba(255, 0, 80, 0.2)'}
+                            bg={'#ffccdc'}
                             textAlign="center"
                             borderRadius={'50%'}
                             w={['24px', '40px']}
                             h={['24px', '40px']}
                             mr={['2%']}
                             justifyContent={'center'}
-                            mb={['0', '0', '60px']}
-                            alignSelf={['baseline', 'baseline', 'center']}
+                            mb={['20px', '20px', '60px']}
+                            alignSelf={['center', 'center', 'center']}
                         >
                             {i + 1}
                         </Flex>
