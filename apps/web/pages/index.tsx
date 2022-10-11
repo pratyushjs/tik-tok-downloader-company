@@ -46,7 +46,7 @@ export default () => {
             <KeySteps />
             <AndroidSection />
             <IOSSection />
-            <PcSection/>
+            <PcSection />
             <BestPlace />
             <AppyComponent />
             {/* <BottomData /> */}
