@@ -26,11 +26,12 @@ import {useTranslations} from 'next-intl';
 const DesktopNav = () => {
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-    const t = useTranslations('bottomData');
+    const t = useTranslations('header');
+    const points = t.raw('points');
     console.log(t('aboutTikTok.description[0]'));
     return (
         <Stack direction={'row'} spacing={4}>
-            {NAV_ITEMS.map((navItem) => (
+            {points.map((navItem: any) => (
                 <Box key={navItem.label}>
                     <Popover trigger={'hover'} placement={'bottom-start'}>
                         <PopoverTrigger>
@@ -59,12 +60,17 @@ const DesktopNav = () => {
                                 minW={'sm'}
                             >
                                 <Stack>
-                                    {navItem.children.map((child) => (
-                                        <DesktopSubNav
-                                            key={child.label}
-                                            {...child}
-                                        />
-                                    ))}
+                                    {navItem.children.map(
+                                        (
+                                            child: JSX.IntrinsicAttributes &
+                                                NavItem,
+                                        ) => (
+                                            <DesktopSubNav
+                                                key={child.label}
+                                                {...child}
+                                            />
+                                        ),
+                                    )}
                                 </Stack>
                             </PopoverContent>
                         )}
@@ -119,13 +125,15 @@ const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
 };
 
 const MobileNav = () => {
+    const t = useTranslations('header');
+    const points = t.raw('points');
     return (
         <Stack
             bg={useColorModeValue('white', 'gray.800')}
             p={4}
             display={{md: 'none'}}
         >
-            {NAV_ITEMS.map((navItem) => (
+            {points.map((navItem: JSX.IntrinsicAttributes & NavItem) => (
                 <MobileNavItem key={navItem.label} {...navItem} />
             ))}
         </Stack>
@@ -196,31 +204,31 @@ interface NavItem {
     href?: string;
 }
 
-const NAV_ITEMS: Array<NavItem> = [
-    {
-        label: 'How to save tiktok videos?',
-        href: '#',
-    },
-    {
-        label: 'FAQs',
-        href: '#FAQS',
-    },
-    // {
-    //     label: 'Download app',
-    //     children: [
-    //         {
-    //             label: 'MAC',
-    //             subLabel: 'For OSX and above',
-    //             href: '#',
-    //         },
-    //         {
-    //             label: 'Windows',
-    //             subLabel: 'From windows 10 and above',
-    //             href: '#',
-    //         },
-    //     ],
-    // },
-];
+// const NAV_ITEMS: Array<NavItem> = [
+//     {
+//         label: 'How to save tiktok videos?',
+//         href: '#',
+//     },
+//     {
+//         label: 'FAQs',
+//         href: '#FAQS',
+//     },
+//     // {
+//     //     label: 'Download app',
+//     //     children: [
+//     //         {
+//     //             label: 'MAC',
+//     //             subLabel: 'For OSX and above',
+//     //             href: '#',
+//     //         },
+//     //         {
+//     //             label: 'Windows',
+//     //             subLabel: 'From windows 10 and above',
+//     //             href: '#',
+//     //         },
+//     //     ],
+//     // },
+// ];
 
 const CutsomHeader = () => {
     const {isOpen, onToggle} = useDisclosure();

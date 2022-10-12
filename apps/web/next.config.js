@@ -10,8 +10,11 @@ module.exports = withTM({
     reactStrictMode: true,
     experimental: {esmExternals: true},
     i18n: {
-        locales: ['en', 'de'],
-        defaultLocale: 'en',
+        locales: ['en', 'hn'],
+        defaultLocale: 'hn',
+    },
+    images: {
+        domains: ['s3.ap-southeast-1.wasabisys.com'],
     },
     webpack(config) {
         // adding windicss plugin

@@ -1,15 +1,15 @@
 {
-    "buttons":{
-        "download":"Download"
+    "buttons": {
+        "download": "Download"
     },
-    "input":{
-        "placeholder":"Paste tiktok URL here…"
+    "input": {
+        "placeholder": "टिकटॉक यूआरएल यहां पेस्ट करें..."
     },
     "inputHeader": {
         "success": "Your video has downloaded!",
         "downloading": "Your video is downloading",
         "failed": "Downloading failed",
-        "download": "Download TikTok Video",
+        "download": "टिकटॉक वीडियो डाउनलोड करें",
         "watermark": "TikTok video downloader. Download TikTok video without watermark"
     },
     "keyFeatures": {
@@ -147,7 +147,6 @@
             }
         ]
     },
-  
     "FAQS": {
         "points": [
             {

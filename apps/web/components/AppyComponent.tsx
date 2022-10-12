@@ -1,7 +1,7 @@
 import {Flex, Box} from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-import AppyHigh from '../static/images/AppyHigh.png';
+// import AppyHigh from '../static/images/AppyHigh.png';
 import {useTranslations} from 'next-intl';
 const AppyComponent = () => {
     const t = useTranslations('appySection');
@@ -26,7 +26,9 @@ const AppyComponent = () => {
                 top={['-6%', '-6%', '']}
             >
                 <Image
-                    src={AppyHigh}
+                    src={
+                        'https://s3.ap-southeast-1.wasabisys.com/tiktok-qa/AppyHigh.png'
+                    }
                     layout={'intrinsic'}
                     width={'100%'}
                     height={'100%'}

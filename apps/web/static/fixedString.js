@@ -17,29 +17,29 @@ import Apple from './images/iosSection/Apple.png';
 export const fixedStrings = {
     pcSection: [
         {
-            imageSrc: '',
+            imageSrc: Chrome,
             text: 'To use TikTok downloader without watermark on your laptop or PC, just copy the link of the video you want to save from TikTok.',
         },
         {
-            imageSrc: '',
+            imageSrc: CC,
             text: 'Go to our TikTok downloader website tiktokgo.net and paste the link in the box and hit download! ',
         },
         {
-            imageSrc: '',
+            imageSrc: Mp4,
             text: 'Your tiktok mp4 file will be downloaded instantly!',
         },
     ],
     iosSection: [
         {
-            imageSrc: '',
+            imageSrc: Apple,
             text: 'Open TikTok on your iPhone, iPad or Mac and copy the URL of the TikTok video you want to download.',
         },
         {
-            imageSrc: '',
+            imageSrc: Compass,
             text: 'Go to safari browser and open our TikTok downloader website TikTokgo.net.com. ',
         },
         {
-            imageSrc: '',
+            imageSrc: Mp4,
             text: 'Paste the link and hit the download button. Your TikTok mp4 will be saved in no time!',
         },
     ],
@@ -69,27 +69,27 @@ export const fixedStrings = {
     ],
     keyFeatures: [
         {
-            imageSrc: '',
+            imageSrc: Browsers,
             text: 'Our TikTok downloader works with every browser without any login.',
         },
         {
-            imageSrc: '',
+            imageSrc: Upload,
             text: 'Download TikTok videos without watermark. Perfect for re-publishing and re-posting video content.',
         },
         {
-            imageSrc: '',
+            imageSrc: Spark,
             text: 'Our video downloader TikTok is fast & free of cost.x',
         },
         {
-            imageSrc: '',
+            imageSrc: HD,
             text: 'Best quality downloads in Full HD and HD with our TikTok video downloader',
         },
         {
-            imageSrc: '',
+            imageSrc: Music,
             text: 'You can download TikTok videos without watermark in MP3 and MP4 formats',
         },
         {
-            imageSrc: '',
+            imageSrc: Hand,
             text: 'Tiktokgo.net video downloader is very easy to use',
         },
     ],
