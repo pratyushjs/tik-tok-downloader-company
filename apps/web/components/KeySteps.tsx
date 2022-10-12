@@ -20,10 +20,11 @@ const KeySteps = () => {
                 flexDirection={['column', 'column', 'row']}
                 flexWrap={'wrap'}
             >
-                {fixedStrings.keyFeatures.map((feature) => (
+                {fixedStrings.keyFeatures.map((feature, i) => (
                     <KeysImagesTextModule
                         imageSrc={feature.imageSrc}
                         text={feature.text}
+                        key={`${i}keyfeatures`}
                     />
                 ))}
             </Flex>

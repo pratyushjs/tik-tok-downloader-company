@@ -44,6 +44,7 @@ const PcSection = () => {
                         alignItems={'center'}
                         mb={'25px'}
                         flex="0 0 33.33%"
+                        key={`${i}pcSection`}
                     >
                         <Flex
                             alignItems={'center'}

@@ -32,7 +32,11 @@ const BestPlace = () => {
                 </Box>
                 <Flex direction={'column'}>
                     {fixedStrings.bestPoints.map((point, i) => (
-                        <Flex direction={'row'} pb={['24px', '40px']}>
+                        <Flex
+                            direction={'row'}
+                            pb={['24px', '40px']}
+                            key={`${i}best`}
+                        >
                             <Flex
                                 color={'#79BDCC'}
                                 fontSize={['24px', '60px']}

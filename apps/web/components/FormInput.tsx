@@ -314,7 +314,7 @@ export const FormInputComponent = (props: any): JSX.Element => {
                 <Grid templateColumns="repeat(2, 1fr)" gap={3}>
                     {recievedData?.video?.urls.map(
                         (url: any, index: number) => (
-                            <GridItem>
+                            <GridItem key={`${index}urls`}>
                                 <Button
                                     onClick={() => downloadLink(url)}
                                     w={'full'}

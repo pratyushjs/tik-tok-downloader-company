@@ -43,6 +43,7 @@ const IOSSection = () => {
                     <Flex
                         direction={['column', 'row', 'row']}
                         justifyContent={['center', 'center', 'initial']}
+                        key={`${i}isoSection`}
                     >
                         <Flex
                             w={'10%'}

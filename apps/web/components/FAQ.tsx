@@ -21,14 +21,14 @@ const FAQ = () => {
             >
                 Frequently asked questions.
             </Heading>
-            <Accordion allowMultiple>
+            <Accordion defaultIndex={[-1]} allowMultiple>
                 {fixedStrings.FAQS.map((FAQ, i) => (
                     <AccordionItem
                         border={'none'}
                         borderRadius={'0 0 12px 12px'}
                         overflow="hidden"
                         marginBottom={'16px'}
-                        key={`${FAQ}i`}
+                        key={`${i}FAQS`}
                     >
                         <h2>
                             <AccordionButton

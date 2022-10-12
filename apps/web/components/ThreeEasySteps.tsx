@@ -33,6 +33,7 @@ const ThreeEasySteps = () => {
                         index={i + 1}
                         heading={step.heading}
                         text={step.description}
+                        key={`${i}threeEasysteps`}
                     />
                 ))}
             </Flex>
