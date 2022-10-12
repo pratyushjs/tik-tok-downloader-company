@@ -1,9 +1,10 @@
 import {Box, Flex} from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-import {fixedStrings} from '../static/fixedString';
-
+import {useTranslations} from 'next-intl';
 const IOSSection = () => {
+    const t = useTranslations('iosSection');
+    const points = t.raw('points');
     return (
         <Flex bg={'#F9F9F9'} p={'6%'} direction={['column', 'column', 'row']}>
             <Flex direction={'column'} p={'0 6% 0 0 '}>
@@ -14,7 +15,7 @@ const IOSSection = () => {
                     fontSize={['24px', '48px']}
                     mb={['16px', '16px', '47px']}
                 >
-                    TikTok videos download for iPhone, iPad and Mac (iOS){' '}
+                    {t('heading')}{' '}
                 </Box>
                 <Box
                     color={'#555555'}
@@ -22,15 +23,11 @@ const IOSSection = () => {
                     fontSize={['16px', '18px']}
                     textAlign={['center', 'center', 'left']}
                 >
-                    Download TikTok videos without watermark for free if you are
-                    an Apple user. TikTok video downloader is perfectly
-                    compatible with iOS.
+                    {t('subText')}
                     <br />
                     <br />
                     <br />
-                    You can save from TikTok in MP4 format using the Safari
-                    browser. Make sure your iOS is updated to version 13 or any
-                    newer version for smooth functioning.
+                    {t('anothersubText')}
                 </Box>
             </Flex>
             <Flex
@@ -39,7 +36,7 @@ const IOSSection = () => {
                 zIndex={'1'}
                 className="step_ios"
             >
-                {fixedStrings.iosSection.map((ios, i) => (
+                {points.map((ios: any, i: number) => (
                     <Flex
                         direction={['column', 'row', 'row']}
                         justifyContent={['center', 'center', 'initial']}

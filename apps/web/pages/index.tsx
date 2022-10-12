@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import {Box, Flex} from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import FAQ from '../components/FAQ';
@@ -12,7 +13,7 @@ import BestPlace from '../components/BestPlace';
 import AndroidSection from '../components/AndroidSection';
 import IOSSection from '../components/IOSSection';
 import PcSection from '../components/PcSection';
-
+import {GetStaticPropsContext} from 'next';
 const FormInputComponentDynamic = dynamic(
     () => import('../components/FormInput'),
     {
@@ -20,7 +21,7 @@ const FormInputComponentDynamic = dynamic(
     },
 );
 
-export default () => {
+export default function Index() {
     const [urlProgressType, seturlProgressType] = useState('INITIAL');
     console.log(urlProgressType);
 
@@ -54,4 +55,11 @@ export default () => {
             <Footer />
         </section>
     );
-};
+}
+export async function getStaticProps({locale}: GetStaticPropsContext) {
+    return {
+        props: {
+            messages: (await import(`../static/text/${locale}.json`)).default,
+        },
+    };
+}

@@ -1,9 +1,10 @@
 import {Flex, Text} from '@chakra-ui/react';
 import React from 'react';
 import {Spinner} from '@chakra-ui/react';
-
+import {useTranslations} from 'next-intl';
 const InputHeaderText = (props: any) => {
     console.log(props);
+    const t = useTranslations('inputHeader');
     const {urlProgressType: type} = props;
     if (type == 'SUCCESS')
         return (
@@ -15,7 +16,7 @@ const InputHeaderText = (props: any) => {
                     p={['44% 0 3% 0', '17% 0 3% 0']}
                     textAlign={'center'}
                 >
-                    Your video has downloaded!
+                    {t('success')}
                 </Text>
             </>
         );
@@ -29,7 +30,7 @@ const InputHeaderText = (props: any) => {
                     p={'3% 0'}
                     textAlign={'center'}
                 >
-                    Your video is downloading
+                    {t('downloading')}
                 </Text>
                 <Flex
                     justifyContent={'center'}
@@ -50,7 +51,7 @@ const InputHeaderText = (props: any) => {
                     textAlign={'center'}
                     p={'3% 0'}
                 >
-                    Downloading failed
+                    {t('failed')}
                 </Text>
             </>
         );
@@ -62,11 +63,9 @@ const InputHeaderText = (props: any) => {
                 color={'white'}
                 textAlign={'center'}
             >
-                Download TikTok Video
+                {t('download')}
             </Text>
-            <Text className="InputFiledHeaderText__slim">
-                TikTok video downloader. Download TikTok video without watermark
-            </Text>
+            <Text className="InputFiledHeaderText__slim">{t('watermark')}</Text>
         </>
     );
 };

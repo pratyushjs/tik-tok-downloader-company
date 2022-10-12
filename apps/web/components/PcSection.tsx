@@ -1,9 +1,10 @@
 import {Box, Flex} from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-import {fixedStrings} from '../static/fixedString';
-
+import {useTranslations} from 'next-intl';
 const PcSection = () => {
+    const t = useTranslations('pcSection');
+    const points = t.raw('points');
     return (
         <Flex direction={'column'} p={'6%'} bg="white">
             <Box
@@ -13,7 +14,7 @@ const PcSection = () => {
                 fontSize={['24px', '48px']}
                 mb={['30px', '30px', '95px']}
             >
-                TikTok Video Downloader Without Watermark for PC
+                {t('heading')}
             </Box>
             <Box
                 color={'#555555'}
@@ -21,12 +22,7 @@ const PcSection = () => {
                 fontSize={['14px', '18px']}
                 textAlign={'center'}
             >
-                This is the most convenient and universal way to download and
-                save your files in MP4 format. You can download TikTok videos
-                without watermark in high quality in one go. Our TikTok video
-                downloader works perfectly on Mac OS, Windows & Linux platforms.
-                If you are using your PC to save from TikTok, you do not need to
-                install any additional applications
+                {t('subText')}
             </Box>
             <Box textAlign={'center'}>All you need to do is -</Box>
             <Flex
@@ -37,7 +33,7 @@ const PcSection = () => {
                 className="step-line-pc"
                 zIndex={'0'}
             >
-                {fixedStrings.pcSection.map((android, i) => (
+                {points.map((android: any, i: number) => (
                     <Flex
                         direction={'column'}
                         justifyContent={'flex-start'}

@@ -1,9 +1,10 @@
 import {Box, Flex} from '@chakra-ui/react';
 import React from 'react';
-import {fixedStrings} from '../static/fixedString';
 import KeysImagesTextModule from './Atoms/KeysImagesTextModule';
-
+import {useTranslations} from 'next-intl';
 const KeySteps = () => {
+    const t = useTranslations('keyFeatures');
+    const points = t.raw('points');
     return (
         <Flex bg={'#F3F8FB'} p={['5%']} direction={'column'} pb={'2%'}>
             <Box
@@ -13,14 +14,14 @@ const KeySteps = () => {
                 color={'#000000'}
                 mb={['30px', '50px']}
             >
-                Key Features of Tiktokgo.net Video Downloader
+                {t('heading')}
             </Box>
             <Flex
                 justifyContent={'center'}
                 flexDirection={['column', 'column', 'row']}
                 flexWrap={'wrap'}
             >
-                {fixedStrings.keyFeatures.map((feature, i) => (
+                {points.map((feature: {imageSrc: any; text: any}, i: any) => (
                     <KeysImagesTextModule
                         imageSrc={feature.imageSrc}
                         text={feature.text}

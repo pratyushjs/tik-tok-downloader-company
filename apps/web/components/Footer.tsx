@@ -1,58 +1,58 @@
 import {Box, Center, Text, Stack} from '@chakra-ui/react';
 import React from 'react';
-
-export const Footer = () => (
-    <Center
-        p={['7%']}
-        w={'full'}
-        bgGradient="linear(292.45deg, #7F197C 0%, #3B3B9A 98.67%)"
-    >
-        <Stack
-            className="Footer"
-            spacing={4}
-            align="stretch"
-            direction={'column'}
+import {useTranslations} from 'next-intl';
+export const Footer = () => {
+    const t = useTranslations('footerData');
+    const points = t.raw('points');
+    return (
+        <Center
+            p={['7%']}
+            w={'full'}
+            bgGradient="linear(292.45deg, #7F197C 0%, #3B3B9A 98.67%)"
         >
             <Stack
-                spacing={['10px', '60px']}
-                direction={['column', 'column', 'row']}
-                fontSize={['16px', '16px', '24px']}
+                className="Footer"
+                spacing={4}
+                align="stretch"
+                direction={'column'}
             >
-                <Box
-                    className="Footer__PolicyTabs"
-                    fontSize={'inherit'}
-                    color={'#FFFFFF'}
+                <Stack
+                    spacing={['10px', '60px']}
+                    direction={['column', 'column', 'row']}
+                    fontSize={['16px', '16px', '24px']}
                 >
-                    Contacts
-                </Box>
-                <Box
-                    className="Footer__PolicyTabs"
-                    fontSize={'inherit'}
-                    color={'#FFFFFF'}
-                >
-                    Privacy Policy
-                </Box>
-                <Box
-                    className="Footer__PolicyTabs"
-                    fontSize={'inherit'}
-                    color={'#FFFFFF'}
-                >
-                    FAQs
-                </Box>
-                <Box
-                    className="Footer__PolicyTabs"
-                    fontSize={'inherit'}
-                    color={'#FFFFFF'}
-                >
-                    APK
-                </Box>
+                    {points.map(
+                        (point: {
+                            text:
+                                | string
+                                | number
+                                | boolean
+                                | React.ReactElement<
+                                      any,
+                                      string | React.JSXElementConstructor<any>
+                                  >
+                                | React.ReactFragment
+                                | React.ReactPortal
+                                | null
+                                | undefined;
+                        }) => (
+                            <Box
+                                className="Footer__PolicyTabs"
+                                fontSize={'inherit'}
+                                color={'#FFFFFF'}
+                            >
+                                {point.text}
+                            </Box>
+                        ),
+                    )}
+                </Stack>
+                <Text align={['initial', 'center']} color={'#FFFFFF'}>
+                    {t('text')}
+                </Text>
+                <Text align={['initial', 'center']} color={'#FFFFFF'}>
+                    {t('subText')}
+                </Text>
             </Stack>
-            <Text align={['initial', 'center']} color={'#FFFFFF'}>
-                We are not affiliated with TikTok, Douyin or Bytedance
-            </Text>
-            <Text align={['initial', 'center']} color={'#FFFFFF'}>
-                Copyright 2018-2022
-            </Text>
-        </Stack>
-    </Center>
-);
+        </Center>
+    );
+};

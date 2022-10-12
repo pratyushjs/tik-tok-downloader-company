@@ -22,11 +22,12 @@ import {
 } from '@chakra-ui/icons';
 import Image from 'next/image';
 import TKHeader from '../static/images/TKHeader.png';
-
+import {useTranslations} from 'next-intl';
 const DesktopNav = () => {
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-
+    const t = useTranslations('bottomData');
+    console.log(t('aboutTikTok.description[0]'));
     return (
         <Stack direction={'row'} spacing={4}>
             {NAV_ITEMS.map((navItem) => (

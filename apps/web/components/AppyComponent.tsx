@@ -2,7 +2,9 @@ import {Flex, Box} from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 import AppyHigh from '../static/images/AppyHigh.png';
+import {useTranslations} from 'next-intl';
 const AppyComponent = () => {
+    const t = useTranslations('appySection');
     return (
         <Flex
             position={'relative'}
@@ -45,7 +47,7 @@ const AppyComponent = () => {
                     fontSize={['24px', '48px']}
                     fontWeight={'700'}
                 >
-                    Download TikTok Videos Online from TikTokgo.net
+                    {t('heading')}
                 </Box>
                 <Box
                     fontSize={['14px', '18px']}
@@ -53,19 +55,7 @@ const AppyComponent = () => {
                     color={'#333B4F'}
                     textAlign={['center']}
                 >
-                    Tiktokgo.net is a free online TikTok video downloader tool
-                    without watermark. You can save HD TikTok videos in MP4
-                    format. It is very easy to download TikTok videos from our
-                    website.
-                    <br />
-                    <br />
-                    <br />
-                    Tiktokgo.net is one of the most used and popular tools to
-                    download no-watermark TikTok videos. You dont have to
-                    install any app or software to do this, all you need is an
-                    active internet connection, browser and a valid link to
-                    paste in the box above on TikTok video downloader website
-                    and it removes watermark from TikTok video automatically.
+                    {t('subText')}
                 </Box>
             </Flex>
         </Flex>

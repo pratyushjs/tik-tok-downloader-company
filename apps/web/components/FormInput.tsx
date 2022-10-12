@@ -14,7 +14,7 @@ import {VideoComponent} from './Video';
 import CC from '../static/images/cc.png';
 import axios from 'axios';
 import Image from 'next/image';
-
+import {useTranslations} from 'next-intl';
 // // ERRORS ///
 /**
  * @class InvalidUrlError
@@ -54,6 +54,8 @@ export const FormInputComponent = (props: any): JSX.Element => {
         if (state?.error == false || state?.error) return true;
         return false;
     };
+    const t = useTranslations('buttons');
+    const it = useTranslations('input');
     // const {data, mutate} = useSWR(
     //     (!state.error || !(state.error as string).length) &&
     //         /^http(s?)(:\/\/)([a-z]+\.)*tiktok\.com\/(.+)$/gi.test(state.url)
@@ -220,7 +222,7 @@ export const FormInputComponent = (props: any): JSX.Element => {
                         <Input
                             pr="4.5rem"
                             h={['60px', '84px']}
-                            placeholder="Paste tiktok URL here…"
+                            placeholder={it('placeholder')}
                             value={state.url}
                             type="url"
                             w={['98%', '98%', '74%']}
@@ -271,7 +273,7 @@ export const FormInputComponent = (props: any): JSX.Element => {
                                 isDisabled={isButtonDisabled()}
                                 isActive={false}
                             >
-                                Download
+                                {t('download')}
                             </Button>
                         </InputRightElement>
                     </InputGroup>
@@ -298,7 +300,7 @@ export const FormInputComponent = (props: any): JSX.Element => {
                             p="19px"
                             disabled={isButtonDisabled()}
                         >
-                            Download
+                            {t('download')}
                         </Button>
                     </Flex>
                 </Flex>

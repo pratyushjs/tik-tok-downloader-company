@@ -1,9 +1,12 @@
 import {Box, Flex} from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-import {fixedStrings} from '../static/fixedString';
-
+import {useTranslations} from 'next-intl';
 const AndroidSection = () => {
+    const t = useTranslations('androidSection');
+    const sections = t.raw('links');
+    console.log(sections);
+
     return (
         <Flex direction={'column'} p={'6%'} bg="white">
             <Box
@@ -13,7 +16,7 @@ const AndroidSection = () => {
                 fontSize={['24px', '48px']}
                 mb={['30px', '30px', '95px']}
             >
-                Download TikTok videos on Android phones
+                {t('download')}
             </Box>
             <Flex
                 direction={['column', 'column', 'row']}
@@ -23,7 +26,7 @@ const AndroidSection = () => {
                 position={'relative'}
                 zIndex={'0'}
             >
-                {fixedStrings.androidSections.map((android, i) => (
+                {sections.map((android: any, i: number) => (
                     <Flex
                         direction={'column'}
                         justifyContent={'flex-start'}

@@ -1,6 +1,7 @@
 import 'windi.css';
 import type {AppProps} from 'next/app';
 import {ChakraProvider} from '@chakra-ui/react';
+import {NextIntlProvider} from 'next-intl';
 import '../styles/main.css';
 import theme from '../utils/theme';
 /**
@@ -11,7 +12,9 @@ import theme from '../utils/theme';
 export default function TikTokApp({Component, pageProps}: AppProps) {
     return (
         <ChakraProvider theme={theme}>
-            <Component {...pageProps} />
+            <NextIntlProvider messages={pageProps.messages}>
+                <Component {...pageProps} />
+            </NextIntlProvider>
         </ChakraProvider>
     );
 }
