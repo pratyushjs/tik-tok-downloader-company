@@ -17,6 +17,8 @@ export default class TikTokDocument extends Document {
                         href="https://fonts.googleapis.com/css?family=Poppins&display=optional"
                         rel="stylesheet"
                     ></link>
+                    <meta name="description" content="Free TikTok downloader without watermark online. Save TikTok videos in high quality in MP3 or MP4 files. Easy to use, fast and safe video TikTok downloader. " />
+                    <meta name='title' content="TikTok Downloader: Download TikTok Videos Without Watermark (HD)"/>
                 </Head>
                 <body>
                     <BodyComponent>
