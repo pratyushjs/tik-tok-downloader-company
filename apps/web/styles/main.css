@@ -16,9 +16,6 @@ html {
     transform: rotate(-180deg);
 }
 
-.Header {
-}
-
 .InputFiledHeaderText__slim {
     font-weight: 400;
     text-align: center;
@@ -36,7 +33,7 @@ html {
     .step-line-pc:before {
         display: none;
     }
-    .step_ios:before {
+    .step_ios {
         display: none;
     }
 }
@@ -114,14 +111,12 @@ html {
     z-index: -1;
 }
 
-.step_ios:before {
+.step_ios {
     content: '';
     background-color: #dddddd;
     position: absolute;
-    top: 5%;
-    right: -28%;
-    transform: rotate(90deg) translateX(50%);
-    height: 4px;
-    width: 64%;
-    z-index: -1;
+    height: calc(100% / 1.4);
+    width: 4px;
+    right: 2.7%;
+    z-index: 0;
 }

@@ -6,13 +6,15 @@ const KeySteps = () => {
     const t = useTranslations('keyFeatures');
     const points = t.raw('points');
     return (
-        <Flex bg={'#F3F8FB'} p={['5%']} direction={'column'} pb={'2%'}>
+        <Flex bg={'#F3F8FB'} p={['5%']} direction={'column'} pt={'10%'}>
             <Box
                 textAlign={'center'}
                 fontWeight="700"
                 fontSize={['24px', '48px']}
                 color={'#000000'}
-                mb={['30px', '50px']}
+                mb={['20px']}
+                lineHeight={['36px']}
+                pb={['initial', '4%']}
             >
                 {t('heading')}
             </Box>

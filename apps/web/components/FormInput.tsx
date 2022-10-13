@@ -218,6 +218,8 @@ export const FormInputComponent = (props: any): JSX.Element => {
                         borderRadius={'100px'}
                         h={['60px', '84px']}
                         width={['full', '100%', '70%']}
+                        display={'flex'}
+                        alignItems={'center'}
                     >
                         <Input
                             pr="4.5rem"
@@ -229,8 +231,8 @@ export const FormInputComponent = (props: any): JSX.Element => {
                             borderRadius={'100px'}
                             p={'28px 28px'}
                             border="none"
-                            fontSize={'20px'}
-                            fontWeight={'400px'}
+                            fontSize={['12px', '20px']}
+                            fontWeight={'400'}
                             focusBorderColor="none"
                             ref={inputFieldRef}
                             onChange={(event) =>
@@ -245,8 +247,12 @@ export const FormInputComponent = (props: any): JSX.Element => {
                             cursor="pointer"
                             onClick={handlePaste}
                             mr={'6px'}
+                            position={'relative'}
+                            minH={['60px', '68px']}
+                            maxH={['60px', '68px']}
+                            minW={['60px', '68px']}
                         >
-                            <Image src={CC} layout={'intrinsic'} />
+                            <Image src={CC} layout={'fill'} />
                         </Flex>
                         <InputRightElement
                             justifyContent={'center'}

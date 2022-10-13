@@ -8,10 +8,10 @@ const AndroidSection = () => {
     console.log(sections);
 
     return (
-        <Flex direction={'column'} p={'6%'} bg="white">
+        <Flex direction={'column'} p={'5%'} bg="white" pt={'10%'}>
             <Box
                 textAlign={'center'}
-                color={'##000000'}
+                color={'#000000'}
                 fontWeight="700"
                 fontSize={['24px', '48px']}
                 mb={['30px', '30px', '95px']}
@@ -32,7 +32,7 @@ const AndroidSection = () => {
                         justifyContent={'flex-start'}
                         alignItems={'center'}
                         flex="0 0 25%"
-                        p={['', '', '0 20px 20px 25px']}
+                        p={['initial', 'initial', '0 20px 20px 25px']}
                         key={`${i}android`}
                     >
                         <Flex>
@@ -43,9 +43,11 @@ const AndroidSection = () => {
                                 borderRadius={'50%'}
                                 w={['24px', '40px']}
                                 h={['24px', '40px']}
-                                mr={['2%']}
+                                // mr={['2%']}
                                 justifyContent={'center'}
                                 mb={['20px', '20px', '60px']}
+                                fontSize={['12px', '18px']}
+                                fontWeight={'800'}
                             >
                                 {i + 1}
                             </Flex>
@@ -63,7 +65,8 @@ const AndroidSection = () => {
                             color={'#555555'}
                             fontWeight="400"
                             fontSize={['14px', '18px']}
-                            pl={['20px', '20px', 0]}
+                            pl={['0px', '20px', 0]}
+                            mb={['20px']}
                         >
                             {android.text}
                         </Box>

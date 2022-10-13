@@ -10,8 +10,8 @@ const InputHeaderText = (props: any) => {
         return (
             <>
                 <Text
-                    fontWeight={[400, 800]}
-                    fontSize={['36px', '60px']}
+                    fontWeight={[700, 800]}
+                    fontSize={['24px', '60px']}
                     color={'white'}
                     p={['44% 0 3% 0', '17% 0 3% 0']}
                     textAlign={'center'}
@@ -24,8 +24,8 @@ const InputHeaderText = (props: any) => {
         return (
             <>
                 <Text
-                    fontWeight={[400, 800]}
-                    fontSize={['36px', '60px']}
+                    fontWeight={[700, 800]}
+                    fontSize={['24px', '60px']}
                     color={'white'}
                     p={'3% 0'}
                     textAlign={'center'}
@@ -45,8 +45,8 @@ const InputHeaderText = (props: any) => {
         return (
             <>
                 <Text
-                    fontWeight={[400, 800]}
-                    fontSize={['36px', '60px']}
+                    fontWeight={[700, 800]}
+                    fontSize={['24px', '60px']}
                     color={'white'}
                     textAlign={'center'}
                     p={'3% 0'}
@@ -58,12 +58,15 @@ const InputHeaderText = (props: any) => {
     return (
         <>
             <Text
-                fontWeight={[400, 800]}
-                fontSize={['36px', '60px']}
+                fontWeight={[700, 800]}
+                fontSize={['24px', '60px']}
                 color={'white'}
                 textAlign={'center'}
+                marginBottom={['1.5rem', 'initial']}
+                letterSpacing={['initial', '-0.303241']}
             >
                 {t('download')}
+          
             </Text>
             <Text className="InputFiledHeaderText__slim">{t('watermark')}</Text>
         </>

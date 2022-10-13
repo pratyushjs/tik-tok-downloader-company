@@ -9,17 +9,20 @@ const KeysImagesTextModule = (props: any) => {
             direction={'column'}
             flex={'0 0 33.333333%'}
             m={'20px 0'}
-            p={'0 50px'}
+            alignItems={'center'}
         >
-            <Flex justifyContent={'center'} marginBottom={['16px', '24px']}>
-                <Image
-                    src={imageSrc}
-                    layout={'intrinsic'}
-                    height="60%"
-                    width={'60%'}
-                />
+            <Flex
+                justifyContent={'center'}
+                marginBottom={['16px', '24px']}
+                height={['70px']}
+                width={['72px']}
+                position={'relative'}
+            >
+                <Image src={imageSrc} layout="fill" />
             </Flex>
-            <Box textAlign={'center'}>{text}</Box>
+            <Box textAlign={'center'} width={['initial', '350px']}>
+                {text}
+            </Box>
         </Flex>
     );
 };

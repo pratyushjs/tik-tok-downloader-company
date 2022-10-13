@@ -5,7 +5,6 @@ import {
     Text,
     IconButton,
     Stack,
-    Collapse,
     Icon,
     Link,
     Popover,
@@ -13,13 +12,14 @@ import {
     PopoverContent,
     useColorModeValue,
     useDisclosure,
+    Drawer,
+    DrawerContent,
+    DrawerBody,
+    DrawerCloseButton,
+    DrawerHeader,
+    DrawerOverlay,
 } from '@chakra-ui/react';
-import {
-    HamburgerIcon,
-    CloseIcon,
-    ChevronDownIcon,
-    ChevronRightIcon,
-} from '@chakra-ui/icons';
+import {HamburgerIcon, CloseIcon, ChevronRightIcon} from '@chakra-ui/icons';
 import Image from 'next/image';
 import TKHeader from '../static/images/TKHeader.png';
 import {useTranslations} from 'next-intl';
@@ -124,76 +124,43 @@ const DesktopSubNav = ({label, href, subLabel}: NavItem) => {
     );
 };
 
-const MobileNav = () => {
+interface MobileNav {
+    isOpen: boolean;
+    onClose: () => void;
+    onToggle: () => void;
+}
+const MobileNav = ({isOpen, onClose, onToggle}: MobileNav) => {
+    const linkHoverColor = useColorModeValue('gray.800', 'white');
     const t = useTranslations('header');
     const points = t.raw('points');
     return (
-        <Stack
-            bg={useColorModeValue('white', 'gray.800')}
-            p={4}
-            display={{md: 'none'}}
-        >
-            {points.map((navItem: JSX.IntrinsicAttributes & NavItem) => (
-                <MobileNavItem key={navItem.label} {...navItem} />
-            ))}
-        </Stack>
-    );
-};
-
-const MobileNavItem = ({label, children, href}: NavItem) => {
-    const {isOpen, onToggle} = useDisclosure();
-
-    return (
-        <Stack spacing={4} onClick={children && onToggle}>
-            <Flex
-                py={2}
-                as={Link}
-                href={href ?? '#'}
-                justify={'space-between'}
-                align={'center'}
-                _hover={{
-                    textDecoration: 'none',
-                }}
-            >
-                <Text
-                    fontWeight={600}
-                    color={useColorModeValue('gray.600', 'gray.200')}
-                >
-                    {label}
-                </Text>
-                {children && (
-                    <Icon
-                        as={ChevronDownIcon}
-                        transition={'all .25s ease-in-out'}
-                        transform={isOpen ? 'rotate(180deg)' : ''}
-                        w={6}
-                        h={6}
-                    />
-                )}
-            </Flex>
-
-            <Collapse
-                in={isOpen}
-                animateOpacity
-                style={{marginTop: '0!important'}}
-            >
-                <Stack
-                    mt={2}
-                    pl={4}
-                    borderLeft={1}
-                    borderStyle={'solid'}
-                    borderColor={useColorModeValue('gray.200', 'gray.700')}
-                    align={'start'}
-                >
-                    {children &&
-                        children.map((child) => (
-                            <Link key={child.label} py={2} href={child.href}>
-                                {child.label}
-                            </Link>
-                        ))}
-                </Stack>
-            </Collapse>
-        </Stack>
+        <Drawer isOpen={isOpen} onClose={onClose}>
+            <DrawerOverlay />
+            <DrawerContent>
+                <DrawerHeader>
+                    <DrawerCloseButton />
+                </DrawerHeader>
+                <DrawerBody>
+                    {points.map((navItem: any) => (
+                        <Link
+                            p={2}
+                            href={navItem.href ?? '#'}
+                            fontSize={'20px'}
+                            fontWeight={400}
+                            color={'black'}
+                            display={'inline-block'}
+                            _hover={{
+                                textDecoration: 'none',
+                                color: linkHoverColor,
+                            }}
+                            onClick={onToggle}
+                        >
+                            {navItem.label}
+                        </Link>
+                    ))}
+                </DrawerBody>
+            </DrawerContent>
+        </Drawer>
     );
 };
 
@@ -231,7 +198,7 @@ interface NavItem {
 // ];
 
 const CutsomHeader = () => {
-    const {isOpen, onToggle} = useDisclosure();
+    const {isOpen, onToggle, onClose} = useDisclosure();
     return (
         <Flex
             w={'full'}
@@ -242,7 +209,11 @@ const CutsomHeader = () => {
             left={0}
             background={'rgba(0, 0, 0, 0.2)'}
         >
-            <Box w={['6%', '3%']} padding={['5% 0 0 0%', '0px']}>
+            <Box
+                w={['24px', '3%']}
+                height={['28px']}
+                padding={['5% 0 0 0%', '0px']}
+            >
                 <Image src={TKHeader} layout={'responsive'} />
             </Box>
             <HStack>
@@ -281,10 +252,11 @@ const CutsomHeader = () => {
                             </Flex>
                         </Flex>
                     </Flex>
-
-                    <Collapse in={isOpen} animateOpacity>
-                        <MobileNav />
-                    </Collapse>
+                    <MobileNav
+                        isOpen={isOpen}
+                        onClose={onClose}
+                        onToggle={onToggle}
+                    />
                 </Box>
             </HStack>
         </Flex>

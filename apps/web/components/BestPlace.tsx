@@ -5,10 +5,10 @@ const BestPlace = () => {
     const t = useTranslations('bestPlace');
     const points = t.raw('points');
     return (
-        <Flex bg={'#F3F8FB'} p="10% 10%" flexDirection={'column'}>
+        <Flex bg={'#F3F8FB'} p="10% 5% 100px 5%" flexDirection={'column'}>
             <Box
                 color={'#000000'}
-                fontSize={['24px', '48px']}
+                fontSize={['16px', '48px']}
                 fontWeight={'700'}
                 textAlign={'center'}
                 mb={['25px', '45px']}
@@ -25,7 +25,10 @@ const BestPlace = () => {
                     fontSize={['16px', '28px']}
                     fontWeight={'700'}
                     color={'#333B4F'}
+                    p={['10px']}
                     pb={'20px'}
+                    pl={['10px', '10px', '0px']}
+                    textAlign={['center', 'center', 'left']}
                 >
                     {t('subText')}
                 </Box>
@@ -50,11 +53,13 @@ const BestPlace = () => {
                                 direction={'row'}
                                 pb={['24px', '40px']}
                                 key={`${i}best`}
+                                alignItems={['flex-start', 'center']}
                             >
                                 <Flex
                                     color={'#79BDCC'}
                                     fontSize={['24px', '60px']}
                                     fontWeight={['700', '900']}
+                                     width={['15px', '25px']}
                                 >
                                     {i + 1}.
                                 </Flex>

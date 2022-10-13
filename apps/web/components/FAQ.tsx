@@ -14,12 +14,18 @@ const FAQ = () => {
     const points = t.raw('points');
 
     return (
-        <Box bg={'rgba(240, 240, 240, 0.47)'} p={['10%', '10%']} id={'FAQS'}>
+        <Box
+            bg={'rgba(240, 240, 240, 0.47)'}
+            p={['5%']}
+            id={'FAQS'}
+            pt={['10%']}
+        >
             <Heading
                 fontSize={['32px', '48px']}
                 fontWeight={'700'}
                 textAlign="center"
-                pb={['54px', '108px']}
+                pb={['30px', '108px']}
+                lineHeight={['36px']}
             >
                 Frequently asked questions.
             </Heading>
@@ -43,25 +49,26 @@ const FAQ = () => {
                         i: any,
                     ) => (
                         <AccordionItem
-                            border={'none'}
-                            borderRadius={'0 0 12px 12px'}
-                            overflow="hidden"
-                            marginBottom={'16px'}
+                        border={'none'}
+                        borderRadius={'0 0 12px 12px'}
+                        overflow="hidden"
+                        marginBottom={'20px'}
                             key={`${i}FAQS`}
                         >
                             <h2>
                                 <AccordionButton
-                                    borderRadius={'12px 12px 0 0'}
-                                    bg={'white'}
-                                    _hover={{bg: 'white'}}
-                                    p={'23px'}
+                                borderRadius={'12px 12px 0 0'}
+                                bg={'white'}
+                                _hover={{bg: 'white'}}
+                                p={'23px'}
+                                alignItems={'flex-start'}
                                 >
                                     <Box
-                                        flex="1"
-                                        textAlign="left"
-                                        color={'#2B2B2B'}
-                                        fontSize={'20px'}
-                                        fontWeight={'400'}
+                                    flex="1"
+                                    textAlign="left"
+                                    color={'#2B2B2B'}
+                                    fontSize={['12px', '20px']}
+                                    fontWeight={'400'}
                                     >
                                         {FAQ.heading}
                                     </Box>

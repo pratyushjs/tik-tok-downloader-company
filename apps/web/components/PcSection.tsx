@@ -6,13 +6,19 @@ const PcSection = () => {
     const t = useTranslations('pcSection');
     const points = t.raw('points');
     return (
-        <Flex direction={'column'} p={'6%'} bg="white">
+        <Flex
+            direction={'column'}
+            p={'6%'}
+            bg="white"
+            pt={'10%'}
+            alignItems={['initial', 'initial', 'center']}
+        >
             <Box
                 textAlign={'center'}
-                color={'##000000'}
+                color={'#000000'}
                 fontWeight="700"
                 fontSize={['24px', '48px']}
-                mb={['30px', '30px', '95px']}
+                mb={['20px', '30px', '20px']}
             >
                 {t('heading')}
             </Box>
@@ -21,10 +27,19 @@ const PcSection = () => {
                 fontWeight="400"
                 fontSize={['14px', '18px']}
                 textAlign={'center'}
+                mb={['20px', '30px', '20px']}
+                w={['initial', 'initial', '1000px']}
             >
                 {t('subText')}
             </Box>
-            <Box textAlign={'center'}>All you need to do is -</Box>
+            <Box
+                textAlign={'center'}
+                fontSize={['16px', '18px']}
+                fontWeight={'600'}
+                mb={['20px', '30px', '95px']}
+            >
+                All you need to do is -
+            </Box>
             <Flex
                 direction={['column', 'column', 'row']}
                 justifyContent="center"
@@ -49,7 +64,6 @@ const PcSection = () => {
                             borderRadius={'50%'}
                             w={['24px', '40px']}
                             h={['24px', '40px']}
-                            mr={['2%']}
                             justifyContent={'center'}
                             mb={['20px', '20px', '60px']}
                             alignSelf={['center', 'center', 'center']}
@@ -69,7 +83,9 @@ const PcSection = () => {
                             color={'#555555'}
                             fontWeight="400"
                             fontSize={['14px', '18px']}
-                            pl={['20px', '20px', 0]}
+                            pl={['0px', '20px', 0]}
+                            width={['initial', 'initial', '350px']}
+                            mr={['initial', 'initial', '25px']}
                         >
                             {android.text}
                         </Box>

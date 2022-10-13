@@ -10,24 +10,21 @@ const ThreeStepsImageTextModule = (props: any) => {
             flex={'0 0 33.33%'}
             mb={['30px', '30px', 0]}
             alignItems={'center'}
+            position={'relative'}
         >
             <Flex
                 textAlign={'center'}
                 justifyContent={'center'}
                 pb={'2%'}
-                h={['100px', '100px', 'initial']}
-                w={['100px', '100px', 'initial']}
+                minH={['96px', '96px', '256px']}
+                minW={['96px', '96px', '256px']}
                 mb={['16px', '16px', '28px']}
+                position={'relative'}
             >
-                <Image
-                    src={imageSrc}
-                    layout={'intrinsic'}
-                    height="180%"
-                    width={'180%'}
-                />
+                <Image src={imageSrc} layout={'fill'} />
             </Flex>
-            <Flex direction={'column'}>
-                <Flex justifyContent={'center'}>
+            <Flex direction={'column'} position={'relative'}>
+                <Flex justifyContent={'center'} alignItems={'flex-start'}>
                     <Flex
                         alignItems={'center'}
                         bg={'#ffccdc'}
@@ -37,6 +34,9 @@ const ThreeStepsImageTextModule = (props: any) => {
                         h={['24px', '40px']}
                         mr={['2%']}
                         justifyContent={'center'}
+                        color={'#000000'}
+                        fontWeight={'700'}
+                        fontSize={['12px', '18px']}
                     >
                         {index}
                     </Flex>
@@ -56,6 +56,7 @@ const ThreeStepsImageTextModule = (props: any) => {
                     fontSize={['14px', '18px']}
                     textAlign={'center'}
                     m={[0, 0, '0 18%']}
+                    lineHeight={['21px', '27px']}
                 >
                     {text}
                 </Box>
